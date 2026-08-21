@@ -9,7 +9,7 @@ merges to `main` through a Pull Request.
 
 Doing the Pokédex instead? Same requirements, same rules. Rename `journal.html`
 and `journal.js` to `pokedex.*` and change the two matching lines in
-`.harness/config.json`.
+`.claude/harness/config.json`.
 
 ## Where you are
 
@@ -122,7 +122,7 @@ given kind of code, the agent will write that kind with you for the rest of the
 project — including in features that are nowhere in the requirements.
 
 Which of the tasks marked in bold you have done is kept in a small file under
-`.harness/progress/`, filed under your git email. The agent writes it once you
+`.claude/harness/progress/`, filed under your git email. The agent writes it once you
 have explained your commit; you commit it like anything else. Ask it where you
 stand whenever you want to know.
 
