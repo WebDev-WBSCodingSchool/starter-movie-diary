@@ -7,6 +7,9 @@
       "Edit(/.claude/settings.json)",
       "Edit(/README.md)",
       "Edit(/CLAUDE.md)",
+      "Edit(/AGENTS.md)",
+      "Edit(/GEMINI.md)",
+      "Edit(/.github/copilot-instructions.md)",
       "Edit(/.vscode/**)",
 
       "Write(/.claude/harness/**)",
@@ -15,6 +18,9 @@
       "Write(/.claude/settings.json)",
       "Write(/README.md)",
       "Write(/CLAUDE.md)",
+      "Write(/AGENTS.md)",
+      "Write(/GEMINI.md)",
+      "Write(/.github/copilot-instructions.md)",
       "Write(/.vscode/**)"
     ],
     "disableBypassPermissionsMode": "disable"

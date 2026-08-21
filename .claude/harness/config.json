@@ -30,7 +30,7 @@
 
   "writableExceptions": [],
 
-  "canonical": ["README.md", "CLAUDE.md"],
+  "canonical": ["README.md", "CLAUDE.md", "AGENTS.md", "GEMINI.md", ".github/copilot-instructions.md"],
 
   "progressDir": ".claude/harness/progress",
 

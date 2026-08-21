@@ -99,9 +99,17 @@
   // outright (`neverWritable` in .claude/harness/config.json); this is the student-facing
   // half. If a later assignment is *about* writing skills, `writableExceptions`
   // opens the agent side and this line comes out.
+  //
+  // AGENTS.md and its two pointer files are the same rule written for the agents
+  // that are not Claude Code. They are locked for a reason worth stating: the one
+  // agent that IS enforced here must not be able to edit the instructions aimed at
+  // its replacements.
   "files.readonlyInclude": {
     "README.md": true,
     "CLAUDE.md": true,
+    "AGENTS.md": true,
+    "GEMINI.md": true,
+    ".github/copilot-instructions.md": true,
     ".claude/harness/**": true,
     ".claude/hooks/**": true,
     ".claude/skills/**": true,
@@ -111,21 +119,22 @@
 
   // ---------- TIDINESS ----------
 
-  // Two files at the top of the tree that are not yours to edit, sitting above
-  // the ones that are. Nesting folds them under README.md — the one they both
+  // Five files at the top of the tree that are not yours to edit, sitting above
+  // the ones that are. Nesting folds them under README.md — the one they all
   // point at — so the first thing you see in the explorer is your own code.
   //
   // This is explorer drawing and nothing else. The files stay exactly where they
-  // are, still at the repo root, still committed, still found by the agent, which
-  // looks for CLAUDE.md at the root and cannot see this setting. Search and Quick
-  // Open still find them. Click the triangle on README.md and there they are.
+  // are, still at the repo root, still committed, still found by every agent that
+  // reads them: Claude Code, Gemini CLI and Copilot each look for their file at
+  // the root and none of them can see this setting. Search and Quick Open still
+  // find them. Click the triangle on README.md and there they are.
   //
   // Nesting works on files only, never folders, and only within one directory —
-  // which is why `.claude` and `.vscode` are still two lines up top.
+  // which is why `.claude`, `.vscode` and `.github` are still four lines up top.
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": "CLAUDE.md, .gitignore"
+    "README.md": "CLAUDE.md, AGENTS.md, GEMINI.md, .gitignore"
   },
 
   // ---------- SIGNALLING ----------
