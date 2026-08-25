@@ -161,9 +161,15 @@ every member listed in it has at least one task.** Meet first — one call, one
 screen shared — and write it together.
 
 Two halves. First, a short restatement **in your own words**: what you are
-building, who uses it, what "done" looks like, and what each of you thought FR012
-meant. Ask that last one out loud, one at a time, before anyone hears the others;
-it is the question that finds the split assumption while it is still cheap.
+building, who uses it, and how much of it you are actually building — which parts
+are in and which you are leaving out on purpose.
+
+While you are all there, settle one more thing **together**: **what is a
+favourite, once it is in `localStorage`?** Which fields of the movie get stored,
+and what "the movie" means at that point. FR012 is where that gets decided, and
+it is the decision two of you can each assume differently and only discover in a
+merge conflict on day four. Write down what you land on — it does not have to be
+right, it has to be shared.
 
 Then the split. Everyone's **git email** — the address `git config user.email`
 prints — and each of you again on the task you took:
@@ -183,8 +189,8 @@ care. Each of you has to turn up twice: once in the member list with your **git*
 email, and again on the task you took. On the task line your name is enough — the
 address is only needed once, because that is what your progress is filed under.
 
-Run `/onboard` and the agent will run the conversation, ask the awkward questions,
-and check the file. **It will not write a word of it** — `PLAN.md` is what the
+Run `/onboard` and the agent will run the conversation, name the parts nobody has
+claimed and the places two of you will collide, and check the file. **It will not write a word of it** — `PLAN.md` is what the
 check reads, so an agent that could write it could clear its own way.
 
 **The check is live.** Edit `PLAN.md` so that someone has no task and the agent
