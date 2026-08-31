@@ -248,6 +248,8 @@ cloned the working fork, each setup check passes, everyone has a task, and each
 person has a task branch. For a solo assignment, setup is complete when the
 checks pass, the opening decisions are settled, and the student has a task branch.
 
-After the plan and setup checks pass, do not offer to create code. Wait until the
-student explicitly asks for a change. Then follow the tutor skill: ask at least
-one project-specific question and wait for the answer before editing code.
+After the plan and setup checks pass, do not offer to create code. Treat any
+implementation request made before or during onboarding as context, not pending
+work. Do not return to it. End the onboarding run. The student must send a new
+message naming the first concrete change they want implemented. Then follow the
+tutor skill and interview them about that change before editing code.
