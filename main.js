@@ -37,3 +37,18 @@
 // ─── FR012 · Add to favourites ───────────────────────────────────────────────
 // An "add to favourites" button. The movie is stored as an object, in an array,
 // in localStorage — the Journal page reads it back out from there.
+
+
+
+
+// ─── X1 · Empty and error states ─────────────────────────────────────────────
+// When the films cannot be loaded — TMDB is down, the token is wrong, the wifi
+// is gone — the page says so instead of sitting empty. Same when a search finds
+// nothing.
+
+
+
+
+// ─── X3 · The favourite button knows ─────────────────────────────────────────
+// A card's favourite button shows whether that film is already in the journal,
+// and flips when clicked, without the whole list being drawn again.

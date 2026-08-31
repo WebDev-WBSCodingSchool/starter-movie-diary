@@ -14,3 +14,10 @@
 // ─── FR014 · Personal notes ──────────────────────────────────────────────────
 // Let someone write a note on a movie, and persist it on the same object in
 // localStorage so it is still there after a reload.
+
+
+
+
+// ─── X4 · Remove a film ──────────────────────────────────────────────────────
+// Take a film back out of the journal. It stays gone after a reload, and the
+// page still works once the last one is removed.

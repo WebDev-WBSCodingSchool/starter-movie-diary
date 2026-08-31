@@ -1,10 +1,10 @@
-# Movie Diary — 005 JS Modules
+# Movie Diary — JavaScript Modules
 
 Five days (full time) / ten days (part time). Group project, mandatory
 presentation at the end.
 
-This repo is your starting point. **Fork it once for your group** and add your
-team members as collaborators. One fork, everyone works in it, every change merges
+This repo is your starting point. **Fork it once for your group** and add your team
+members as collaborators. One fork, everyone works in it, and every change merges
 to `main` through a Pull Request.
 
 Doing the Pokédex instead? Same requirements, same rules. Rename `journal.html`
@@ -13,21 +13,21 @@ and `journal.js` to `pokedex.*` and change the two matching lines in
 
 ## Where you are
 
-Five stages. Each one says what ends it, because that is the part nobody can see
-from inside it.
+Five stages. Each stage names what ends it, which is the part easy to lose sight
+of from the inside.
 
-1. **Fork it, clone it, run `/onboard`.** Ends when the only thing the check still
-   objects to is `PLAN.md`. That one is stage 2, and it stays red until you get
-   there. Everything above it should be a tick.
-2. **Meet, and write `PLAN.md` together.** Ends when the check is green: every
+1. **Fork it, clone it, run `/onboard`.** Ends when the only open item is
+   `PLAN.md`. That is stage 2, and it stays open until you get there.
+   Everything above it should pass.
+2. **Meet, and write `PLAN.md` together.** Ends when the check passes: every
    member listed has a task line, and your own git email is one of them. Until
    then the agent writes no code for anyone in the group.
-3. **Pick a task, cut a branch.** `git switch -c <task-id>-<short-name>`. Ends when
-   you have somewhere to put the work that is not `main`.
-4. **Write it, commit it, explain it.** Ends when the sign-off records. It tells
-   you what just opened up.
-5. **Open a Pull Request.** Ends when it is merged. Then back to 3 with the next
-   task.
+3. **Pick a task, cut a branch.** `git switch -c <task-id>-<short-name>`. Ends
+   when you have a branch for the work instead of committing to `main`.
+4. **Write it, commit it, explain it.** Ends when the sign-off is recorded. It
+   tells you what just opened up.
+5. **Open a Pull Request.** Ends when it is merged. Then return to stage 3 with
+   the next task.
 
 ## The requirements
 
@@ -45,11 +45,14 @@ from inside it.
 | **FR010** | A search bar. On submit, results or a message appear in a dialog. |
 | **FR011** | Each movie's image, title and info, laid out as a card. |
 | **FR012** | An "add to favourites" button that stores the movie as an object in an array in `localStorage`. |
+| **X1** | When the films cannot be loaded, or a search finds nothing, the page says so instead of sitting empty. |
+| **X3** | A card's favourite button shows whether that film is already in your journal, and flips when you click it. |
 | **FR013** | The journal page lists the favourite movies from `localStorage`, with image, title and info. |
 | **FR014** | Notes you can add to a movie, saved on the same object in `localStorage`. |
+| **X4** | Taking a film back out of the journal, so it is gone after a reload too. |
 
-**Bold = you type this one yourself.** The others the agent can write with you from
-day one.
+**Bold = you type this one yourself.** For the others, you may ask the agent to
+help you implement them.
 
 TMDB needs a free signup. [TMDB docs](https://developer.themoviedb.org/docs/getting-started)
 · [PokéAPI](https://pokeapi.co/) (no signup) · [Tailwind docs](https://tailwindcss.com/docs/installation)
@@ -72,18 +75,16 @@ needs a server holding it for you, which is further down the course. If a token
 does get committed, generate a new one. A token that has been public once is
 burned.
 
-## What you type, and what the agent types
+## What you type, and where the agent can help
 
-**The JavaScript in FR009 to FR014 is yours to type.** Fetching data, building DOM
-elements, and reading and writing `localStorage` are the three things this module
-exists to teach, and typing them is how you learn them.
+**The JavaScript in the rows marked in bold is yours to type.** Asking the web for
+data, building and changing the page, and keeping things between visits are the
+three things this module exists to teach, and typing them is how you learn them.
+That covers both directions of each one: not only the request that works but the
+one that fails, not only building a card but changing one that is already there,
+not only saving a film but taking it back out.
 
-Ask the agent for that code and it will not write it for you. It explains in plain
-English what the code has to do and where it goes, then points you at the
-documentation, then walks you through the steps if you have tried and are still
-stuck. Each of those needs you to have written something since the last one.
-
-**Everything else the agent can write, from day one:**
+**Everything else you may ask the agent to help implement:**
 
 - All markup and all Tailwind: `index.html`, `journal.html`, every class string.
 - The navbar and page plumbing (FR006 to FR008).
@@ -94,12 +95,12 @@ stuck. Each of those needs you to have written something since the last one.
 
 **The agent waits to be asked.** It will not start building because a file is empty
 or because your plan is finished. None of this is a to-do list it works through on
-its own. Ask it for what you want, and expect it to ask you back when there is
-something to decide.
+its own. Ask it for what you want. Before every code edit, it asks at least one
+question about your requested change and waits for your answer.
 
 Yes, this tells you exactly what you could paste into a browser chat instead. You
-are being told the rule rather than fenced in by it, because a rule you can read is
-one you can decide to keep.
+are given the rule directly rather than fenced in by it. A rule you can read is
+one you can choose to follow.
 
 ## Write it, commit it, explain it
 
@@ -151,9 +152,9 @@ and answer the agent's questions about their code, and the agent will write that
 kind of code with you too, even after the PR has merged. Tell it which PR; it
 records the same way.
 
-It is capped: you can never have more reviewed tasks than written ones, so the
-first one is always your own. Nobody can sit out the writing, and everyone reads
-every part of the project rather than just their own two tasks.
+It is capped: you can never have more reviewed tasks than written ones, so your
+first task is always written by you. Nobody can skip the writing, and everyone
+reads other parts of the project rather than only their own tasks.
 
 ## Before any of that: `PLAN.md`
 
@@ -162,15 +163,19 @@ every member listed in it has at least one task.** Meet first, one call with one
 screen shared, and write it together.
 
 Two halves. First, a short restatement **in your own words**: what you are
-building, who uses it, and how much of it you are actually building, meaning which
-parts are in and which you are leaving out on purpose.
+building, who uses it, and how much of it you are actually going to build. That
+means naming which parts are in and which you are leaving out on purpose. That
+last point is where two of you find out you pictured different amounts of work,
+so write down what you agree on.
 
 While you are all there, settle one more thing **together**: **what is a favourite,
-once it is in `localStorage`?** Which fields of the movie get stored, and what "the
-movie" means at that point. FR012 is where that gets decided, and it is the
-decision two of you can each assume differently and only discover in a merge
-conflict on day four. Write down what you land on. It does not have to be right, it
-has to be shared.
+once it is in `localStorage`?** Which fields of the film get stored, and what "the
+film" means at that point. FR012 is where that gets decided, and three other rows
+depend on it — the journal reads those fields back (FR013), the button on a card
+has to recognise a film it has seen before (X3), and removing one means finding it
+again (X4). It is exactly the decision two of you can each assume differently and
+only discover in a merge conflict on day four. Write down what you land on. It does
+not have to be right, it has to be shared.
 
 Then the split. Everyone's **git email**, the address `git config user.email`
 prints, and each of you again on the task you took:
@@ -185,15 +190,15 @@ prints, and each of you again on the task you took:
 - Search bar + dialog (FR010) — Mo Ahmadi
 ```
 
-That is the whole format. A list, a table, prose, German, English: it does not
-care. Each of you has to turn up twice, once in the member list with your **git**
-email, and again on the task you took. On the task line your name is enough. The
-address is only needed once, because that is what your progress is filed under.
+That is the whole format. Use a list, a table, or prose, in German or English.
+Each of you has to appear twice: once in the member list with your **git** email,
+and again on the task you took. On the task line your name is enough. The address
+is needed once, because progress is filed under it.
 
-Run `/onboard` and the agent will run the conversation, name the parts nobody has
-claimed and the places two of you will collide, and check the file. **It will not
+Run `/onboard` and the agent will guide the conversation, point out unassigned
+parts and places where two of you will collide, and check the file. **It will not
 write a word of it.** `PLAN.md` is what the check reads, so an agent that could
-write it could clear its own way.
+write it would clear its own way.
 
 **The check is live.** Edit `PLAN.md` so that someone has no task and the agent
 stops writing code for everyone until the line is fixed. There is nothing to
@@ -209,12 +214,15 @@ plan, never whether it was any good.
 Issues on your fork.** `/onboard` can create them from your task lines, or make
 them by hand. The issues are the live version and nothing syncs them back.
 
-Write them yourselves either way. The agent will not hand you a breakdown. Once you
-have a draft it will tell you if the load looks lopsided, if something is blocked
-on two other people, or if two of you are about to land in the same function.
+Write them yourselves either way. The agent will not give you a breakdown. Once
+you have a draft it will tell you if the load looks lopsided, if something is
+blocked on two other people, or if two of you are about to edit the same function.
 
-That last one will happen. FR007 fixes you to two JS files and there are six core
-tasks, so you will get merge conflicts. Resolve them together; that is the point.
+That last one will happen, and it will happen in `main.js`: six of the nine tasks
+you type yourself live in that one file, against three in `journal.js`. Expect the
+homepage to be where you meet each other, and plan around it — small branches,
+merged early, rather than four days of separate work landing at once. Resolve the
+conflicts together; that is the point.
 
 Ask for help if you are stuck for more than 30 minutes. Use the daily stand-ups.
 
@@ -231,16 +239,17 @@ did at home end up in two separate records, and neither counts for the other.
 **If you want the agent to talk differently**, with simpler language, shorter
 answers, or more or less detail, say so, and ask it to save that as a personal
 skill in `~/.claude/skills/`. It travels with you to the next project, so you only
-have to ask once. It changes how the agent talks, not what it may write.
+have to ask once. It changes how the agent talks, not which code you must write
+yourself.
 
 Inline suggestions (Copilot-style ghost text) are turned off for this folder in
-`.vscode/settings.json`. That file is read-only, and the agent cannot write to it
-at all. Otherwise it could hand ghost text back in a single edit, and ghost text is
-the one form of help that arrives without being asked for.
+`.vscode/settings.json`. That file is read-only, and the agent cannot write to it.
+Otherwise it could restore ghost text in a single edit, and ghost text is the one
+form of help that arrives without being asked.
 
 **This file is read-only too**, along with `CLAUDE.md`. This page is the
-requirements: it is what the agent reads to work out what it may write for you and
-what it may only talk you through, so it is not a page the agent gets to reword.
+requirements: it tells the agent which code you must write and where it may help
+after you ask, so it is not a page the agent gets to reword.
 `PLAN.md` is read-only to the agent as well, for a different reason: it is yours,
 and it is what the check reads. Your own writing about your project goes in files
 you make, whether that is `PLAN.md`, your Issues, or anything else you want.
@@ -249,7 +258,7 @@ If you think a requirement is wrong or unclear, say so to your instructor. That 
 a conversation, not a diff.
 
 None of these locks is a cage, and you should know that up front. Read-only here
-means VS Code refuses the keystroke, there is a setting that turns that off, and
-there are other editors. What none of it can do is happen quietly. Every file named
-above is committed, so however you go about changing one, it lands in your PR with
-your name on it. That is the whole mechanism: not "you can't", but "it's visible".
+means VS Code rejects typing in those buffers, there is a setting to change that,
+and you can use other editors. But none of it can happen quietly. Every file
+named above is committed, so any change lands in your PR with your name on it.
+That is the mechanism: not "you cannot", but "it is visible".
