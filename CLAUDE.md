@@ -6,6 +6,10 @@ Before responding to a request that could lead to code, read and follow
 `.claude/skills/tutor/SKILL.md`. The README defines what students must write and
 where they may ask for implementation help. The tutor skill defines how to help.
 
+If the student says their group is building the Pokédex, read and follow
+`.claude/skills/variant/SKILL.md`. It explains the switch and asks them to confirm
+once before running `.claude/hooks/variant.mjs`.
+
 The repository hooks decide whether a write is allowed. Read a refusal message
 and follow the tutor skill. Do not bypass a refusal through Bash, ask the student
 to paste Claude-written code, or edit the hook, configuration, or settings that

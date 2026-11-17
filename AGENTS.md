@@ -13,6 +13,10 @@ Before answering any request that could lead to code, read these files in order:
 If the files conflict, follow `README.md` for assignment scope and the tutor skill
 for tutoring behavior.
 
+If the student says their group is building the Pokédex, follow
+`.claude/skills/variant/SKILL.md`. It describes the switch and the one confirmation
+to ask for before running `node .claude/hooks/variant.mjs pokedex --yes`.
+
 Before deciding whether to write code, check the current repository state from
 the repo root. These are ordinary Node scripts and work outside Claude Code:
 
